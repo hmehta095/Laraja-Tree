@@ -50,7 +50,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (mouseTouch == nil) {
             return
         }
-        let location = mouseTouch!.location(in: self)
         
+        let location = mouseTouch!.location(in: self)
+        let mouseXPosition = location.x
+        let mouseYPosition = location.y
+        
+        // 1. make an orange
+        let orange = SKSpriteNode(imageNamed: "Orange")
+        // 2. Position the orange on the scren
+        orange.position.x = mouseXPosition
+        orange.position.y = mouseYPosition
+        // 3. show the orange on screen
+        addChild(orange)
     }
 }
